@@ -1,0 +1,485 @@
+/* === Root variables: Colors, sizes, theme settings === */
+:root{
+  --blue: #0f4db7;
+  --coral: #ff7f66;
+  --bg: #f3f3f3;
+  --panel: #ffffff;
+  --muted: #6b7280;
+  --max-width: 1060px;
+  --radius: 10px;
+}
+
+/* === Global reset & font smoothing === */
+/* sets font-family, background color and smooth text rendering */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial;
+  background: var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+}
+
+/* container */
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* header */
+/* Header stays on top when scrolling (position: sticky) */
+.site-header{
+  background: var(--blue);
+  color: #fff;
+  position: sticky;            /* Sticky header with navigation links */
+  top: 0;
+  z-index: 50;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 0;
+}
+.brand{
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 900;
+  padding-left:6px;
+}
+
+/* nav */
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:18px;
+  font-size:0.95rem;
+  font-weight:500;
+  padding:6px 8px;
+  border-radius:6px;
+  transition: background .15s ease, transform .12s ease;
+}
+.nav a:hover{ background: rgba(255,255,255,0.08); transform:translateY(-3px); }  /* Navigation links have hover animation and spacing */
+
+/* hero */
+.hero{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  padding: 28px 0;
+  align-items:flex-start;
+}
+.hero-left{flex:1;}
+
+/* hero type */
+.hero-hi{
+  font-family: 'Playfair Display', serif;
+  font-weight:900;
+  font-size:48px;
+  margin:0 0 6px;
+  color:#2b2b2b;
+}
+.hero-name{
+  font-family: 'Playfair Display', serif;
+  font-weight:700;
+  font-size:48px;
+  margin:0;
+  color: var(--coral);
+  line-height:1;
+  /* smooth color pulse */
+ 
+  animation: aquaPulse 4s linear infinite;
+}
+
+@keyframes aquaPulse {
+  0% { color: #14b8a6; }
+  50% { color: #5eead4; }
+  100% { color: #14b8a6; }
+}
+
+
+.hero-sub{
+  margin:12px 0 0;
+  color:#495870;
+  font-size:14px;
+}
+
+/* portrait */
+.hero-right{
+  align-self:center;
+}
+.portrait{
+  width:160px;
+  height:160px;
+  object-fit:cover;
+  border-radius:50%;
+  border:6px solid #b3c0d1;
+  box-shadow:0 10px 30px rgba(2,6,23,0.08);
+}
+
+/* section heading + panel */
+.section{ margin-top:36px; }
+.section h2{
+  font-family:'Playfair Display', serif;
+  font-size:20px;
+  margin:0 0 14px;
+}
+.panel{
+  background:var(--panel);
+  padding:18px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(11,16,32,0.06);
+  color:#333;
+}
+
+/* ABOUT text has panel style */
+#about .panel{ font-size:14px; line-height:1.6; }
+
+/* skills row - pill buttons */
+.skills-row{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+.skill{
+  min-width:220px;
+  text-align:center;
+}
+.pill{
+  background: var(--blue);
+  color:white;
+  padding:18px 18px;
+  border-radius:10px;
+  box-shadow:0 8px 20px rgba(2,6,23,0.08);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.pill:hover{ transform:translateY(-6px); box-shadow:0 18px 36px rgba(2,6,23,0.12); }
+.skill-title{ font-weight:700; font-size:14px; letter-spacing:0.6px; margin-bottom:6px; }
+.skill-sub{ font-size:12px; color:#e0e8ff; }
+
+/* Projects */
+.projects-list{ display:flex; flex-direction:column; gap:22px; margin-top:12px; }
+.project-card{
+  background:var(--panel);
+  padding:28px;
+  min-height:100px;
+  border-radius:8px;
+  box-shadow:0 6px 16px rgba(11,16,32,0.06);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:#475569;
+}
+.project-card h4{ font-size:14px; margin:0 0 8px; font-weight:700; color:#0f1724; }
+.project-card p{ margin:0; font-size:13px; }
+
+/* Contact form small centered card */
+.contact-panel{
+  width:260px;
+  background:var(--panel);
+  padding:14px;
+  border-radius:8px;
+  box-shadow:0 10px 28px rgba(2,6,23,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.contact-panel input, .contact-panel textarea{
+  width:100%;
+  padding:8px 10px;
+  border:1px solid #cbd5e1;
+  border-radius:4px;
+  font-size:13px;
+}
+.contact-panel textarea{ min-height:80px; resize:vertical; }
+.send-btn{
+  background:var(--blue);
+  color:#fff;
+  border:none;
+  padding:8px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:700;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.send-btn:hover{ transform:translateY(-3px); box-shadow:0 10px 30px rgba(2,6,23,0.08); }
+
+/* footer */
+.site-footer{
+  margin-top:36px;
+  background:var(--blue);
+  color:white;
+  padding:10px 0;
+  text-align:center;
+  font-size:13px;
+}
+
+/* Back to top small button bottom-right */
+.back-to-top{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: var(--blue);
+  color: white;
+  padding: 8px 10px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 8px 24px rgba(2,6,23,0.12);
+}
+
+/* responsive wide layout: hero text left and image right, scale fonts and spacing */
+@media (min-width: 900px){
+  .hero{
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    padding:34px 0;
+  }
+  .hero-left{ max-width:64%; }
+  .portrait{ width:220px; height:220px; border-width:8px; }
+
+  .hero-hi{ font-size:64px; }
+  .hero-name{ font-size:56px; }
+
+  /* center content width */
+  .skills-row{ justify-content:flex-start; }
+  .projects-list{ width:75%; margin-left:0; }
+  .contact-panel{ margin-left:0; }
+  .container{ padding: 0 30px; }
+  .projects-list{ margin-top:20px; width:75%; }
+  .contact-panel{ margin-top:12px; }
+}
+
+/* center main container spacing*/
+@media (min-width:1100px){
+  .container{ max-width: 1180px; }
+  .projects-list{ width:70%; }
+}
+
+/* small improvements for narrow screens */
+@media (max-width:640px){
+  .hero-hi, .hero-name{ font-size:28px; }
+  .portrait{ width:120px; height:120px; }
+  .skills-row{ gap:12px; justify-content:center; }
+  .project-card{ padding:20px; }
+}
+
+
+/* Make the entire Contact section centered and larger */
+#contact {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Bigger card */
+.contact-panel {
+  width: 380px; /* to make it larger */
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+
+  /* Advanced shadow, 3-layer shadow for premium look */
+  box-shadow:
+    0 5px 10px rgba(0,0,0,0.05),
+    0 10px 25px rgba(0,0,0,0.06),
+    0 20px 40px rgba(0,0,0,0.07);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* hover lift effect */
+.contact-panel:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 6px 12px rgba(0,0,0,0.07),
+    0 12px 30px rgba(0,0,0,0.08),
+    0 24px 48px rgba(0,0,0,0.09);
+}
+
+/* Inputs styled bigger */
+.contact-panel input,
+.contact-panel textarea {
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid
+}
+
+/* 1) Headings: left aligned and consistent spacing */
+.section h2,
+#about + .section h2,
+#skills + .section h2,
+#projects + .section h2,
+#contact + .section h2 {
+  text-align: left;          /* force left alignment */
+  margin-left: 0;            /* no extra indent */
+  margin-top: 0.9rem;        /* keep top spacing consistent */
+  margin-bottom: 1rem;       /* space between heading and content */
+  font-size: 1.25rem;        /* slightly larger and consistent */
+  letter-spacing: 0.2px;
+}
+
+/* Ensure headings appear flush to the content area on wide screens */
+.container .section h2 {
+  max-width: 100%;
+}
+
+/* 2) Add clear bottom spacing after section content */
+.section {
+  margin-bottom: 2.5rem;     /* extra space after section block */
+  padding-bottom: 0.2rem;
+}
+
+/* 3) Make skills row pills expand and larger */
+.skills-row {
+  display: flex;
+  gap: 22px;
+  align-items: stretch;      /* make pills equal height */
+  justify-content: space-between;
+  flex-wrap: nowrap;         /* prefer single row on wide screens */
+  margin-top: 16px;
+}
+
+/* Allow responsive wrap on very narrow screens */
+@media (max-width: 720px) {
+  .skills-row { flex-wrap: wrap; justify-content:center; }
+}
+
+/* Makes each pill flexible so three pills span the width */
+.pill {
+  flex: 1 1 0;               /* grow to fill space equally */
+  min-width: 200px;        
+  padding: 20px 18px;        /* larger padding */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.07);
+}
+
+/* Text styles inside pill */
+.pill .skill-title { font-size: 0.98rem; }
+.pill .skill-sub { font-size: 0.85rem; color: rgba(255,255,255,0.9); }
+
+/* 4) Make project cards full-width + bigger height */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Each project spans the content width (no small columns) */
+.project-card {
+  width: 100%;
+  max-width: 100%;
+  padding: 36px 28px;
+  min-height: 120px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* center the text inside */
+  justify-content: center;
+  box-shadow:
+    0 8px 20px rgba(11,16,32,0.06),
+    0 20px 40px rgba(11,16,32,0.04);
+}
+
+/* center title + description */
+.project-card h4 { margin-bottom: 8px; text-align:center; font-size: 1rem; }
+.project-card p { text-align:center; color:#475569; }
+
+/* 5) Add better spacing between project area and next section */
+.projects-list + .section,
+.projects-list + .section .section {
+  margin-top: 1.6rem;
+}
+
+/* 6) Contact card: center horizontally under heading, larger, and match shadow */
+#contact {
+  display: flex;
+  justify-content: flex-start; /* heading remains left, card slightly indented */
+  gap: 32px;
+}
+
+/* make contact panel larger and more centered relative to main column */
+.contact-panel {
+  width: 420px;              /* larger contact card */
+  max-width: 90%;
+  padding: 26px;
+  border-radius: 14px;
+  margin-left: 36px;         /* small offset under heading to align visually */
+  box-shadow:
+    0 8px 18px rgba(11,16,32,0.06),
+    0 20px 40px rgba(11,16,32,0.08);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+/* Reduce left margin on small screens so it stays centered */
+@media (max-width: 900px) {
+  #contact { justify-content: center; }
+  .contact-panel { margin-left: 0; width: 92%; max-width:420px; }
+}
+
+/* 7) Tighter vertical rhythm for section inner panels */
+.panel, .skill-card, .project-card {
+  margin-bottom: 0.6rem;
+}
+
+/* 8) Slightly larger fonts for readability */
+.section p, .panel p, .project-card p {
+  font-size: 0.98rem;
+}
+
+/* 9) stronger hover lift for all cards for consistent advanced effect */
+.skill-card:hover, .project-card:hover, .contact-panel:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 18px 36px rgba(11,16,32,0.12),
+    0 28px 58px rgba(11,16,32,0.08);
+}
+
+
+@media (min-width: 1000px) {
+  .container { padding-left: 36px; padding-right: 36px; }
+  .section { margin-bottom: 3rem; }
+}
+/* Skill Hover: Soft Blue Glow */
+.pill:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 6px 12px rgba(59, 93, 152, 0.2),
+    0 12px 24px rgba(34, 72, 140, 0.15),
+    0 18px 36px rgba(16, 40, 81, 0.1);
+}
+.pill {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+/* CONTACT SECTION — Center Form Properly */
+#contact {
+  display: flex;
+  justify-content: center;   /* centers form horizontally */
+  align-items: flex-start;
+  margin-top: 20px;
+  gap: 0;
+}
+
+
+
+

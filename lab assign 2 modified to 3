@@ -1,0 +1,127 @@
+<!-- Name: Agrima Mishra 
+     Roll No.- 2501010207
+     LAB ASSIGNMENT 2     -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">My Portfolio</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="https://github.com/agrimamishra288-tech">Projects</a>
+        <a href="https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=agrima-mishra-957481381">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1 class="hero-hi">Hi, I am</h1>
+        <h2 class="hero-name">Full Stack Developer</h2>
+        <p class="hero-sub">Building modern web applications with MERN stack.</p>
+      </div>
+
+      <div class="hero-right">
+        <!-- replace file name if needed -->
+        <img src="agrima2.jpg.jpeg" alt="Profile photo" class="portrait">
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p class="panel">Hello! My name is Agrima Mishra. I am currently learning web development and building responsive web pages. I enjoy creating interactive interfaces and learning new front-end techniques. I am improving my skills every day by building small projects and practicing modern CSS (Flexbox, Grid, animations).</p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2>My Skills</h2>
+      <div class="skills-row">
+        <div class="skill pill">
+          <div class="skill-title">HTML</div>
+          <div class="skill-sub">Beginner</div>
+        </div>
+
+        <div class="skill pill">
+          <div class="skill-title">CSS</div>
+          <div class="skill-sub">Beginner</div>
+        </div>
+
+        <div class="skill pill">
+          <div class="skill-title">JavaScript</div>
+          <div class="skill-sub">Learning</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2>My Projects</h2>
+      <div class="projects-list">
+        <article class="project-card">
+          <h4>Project 1</h4>
+          <p class="muted">A simple HTML & CSS webpage.</p>
+        </article>
+
+        <article class="project-card">
+          <h4>Project 2</h4>
+          <p class="muted">Another awesome mini project.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+
+      <form class="contact-panel" action="#" method="post" novalidate>
+        <label>
+          <span class="label">Name</span>
+          <input type="text" placeholder="Enter your name" required>
+        </label>
+
+        <label>
+          <span class="label">Email</span>
+          <input type="email" placeholder="Enter your email" required>
+        </label>
+
+        <label>
+          <span class="label">Message</span>
+          <textarea placeholder="Write your message"></textarea>
+        </label>
+
+        <button class="send-btn" type="submit">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">© 2025 Agrima Mishra. All rights reserved.</div>
+  </footer>
+
+  <!-- Back to Top (CSS-only anchor) -->
+  <a class="back-to-top" href="#top" aria-label="Back to top">↑ Back to Top</a>
+
+  <!-- Assignment file (your uploaded doc) -->
+  <!-- Reference: /mnt/data/Lab 3.docx -->
+
+</body>
+</html>
